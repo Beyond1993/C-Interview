@@ -18,8 +18,16 @@ public:
     template<typename ... Param>
     std::tuple<Types...> apply(const Param& ... param)
     {
-        std::tuple<Types...>  items = std::tuple<Types...>(param...);
-        return items;
+        const auto getTuple = [](const Param & ... p) {
+            std::tuple<Types...>  items = std::tuple<Types...>(p...);
+            return items;
+        };
+
+        std::tuple<Types...>  t = getTuple(param...);
+        const std::vector<byte> v = tupleToByteArray(t);
+        long result = MurmurHash::hash(v, v.size(),40);
+        std::cout<<result<<std::endl;    //ByteVector::print_vector(v);
+        return t;
     }
 
     // helper function to print a tuple of any size
@@ -73,8 +81,5 @@ int main()
     Data<std::string, int,double> data1;
     const auto t = data1.apply("hello", 3,1.9);
 
-    const std::vector<byte> v = data1.tupleToByteArray(t);
-    long result = MurmurHash::hash(v, v.size(),40);
-    std::cout<<result<<std::endl;    //ByteVector::print_vector(v);
     return 0;
 }
