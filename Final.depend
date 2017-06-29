@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1498709062 source:/home/wayne/C++workspace/Final/main.cpp
+	<iostream>
+	<tuple>
+	<string>
+	<memory>
+	<type_traits>
+	<array>
+	<iomanip>
+	"ByteVector.h"
+
+1498708888 /home/wayne/C++workspace/Final/include/ByteVector.h
+	<vector>
+	<string>
+	<iostream>
+
+1498707213 source:/home/wayne/C++workspace/Final/src/ByteVector.cpp
+	"ByteVector.h"
+
+1498709455 source:/home/wayne/C++workspace/Final/src/MurmurHash.cpp
+	"MurmurHash.h"
+
+1498709449 /home/wayne/C++workspace/Final/include/MurmurHash.h
+	<vector>
+
