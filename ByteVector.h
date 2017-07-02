@@ -8,12 +8,16 @@ using byte = unsigned char;
 class ByteVector
 {
 public:
-    ByteVector();
-    virtual ~ByteVector();
+    //ByteVector();
+    //virtual ~ByteVector();
     static std::vector<byte> to_vector(const int & object);
-
+    static std::vector<byte> to_vector(const double & c);
+    static std::vector<byte> to_vector(const long & c);
+    static std::vector<byte> to_vector(const float & c);
+    static std::vector<byte> to_vector(const char & c);
     static std::vector<byte> to_vector(const std::string & s);
     static std::vector<byte> to_vector(const char * & c);
+
 
     template<typename T>
     static void print_vector(const T & v);
