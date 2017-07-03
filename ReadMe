@@ -1,0 +1,35 @@
+How to run:
+
+Step1 :$ make 
+Step2 :$ ./murmur
+
+Marks:
+
+Thank for Bigstream. It is really interesting to solve this hash problem with C++ new features. 
+
+At first, I don't understand the requirment 
+"Provide an apply() member function of the class which takes a lambda function 
+  that returns a tuple of the key values that the class will use to get the murmur3 hashing."
+
+There are two ways to implement this requirment.
+
+1: take the lambda function as the parameter of apply() funciton.
+2: create a lambda funtion inside the apply() function.
+
+I select the first one. 
+
+
+I designed template  class Hash as super class, which contains the apply() funciton and is able to
+convert the tuple to byte array. It also provide a virtual hash function.
+
+Then the subclass MurmurHash class focus on the murmru algorithm.
+
+If we need achieve other hash algorithms, it easy to add other class extends  Hash class.
+
+
+I reallt cherish this interview opportunity, Thank you so much !
+
+
+References:
+//https://www.codeproject.com/Articles/48575/How-to-define-a-template-class-in-a-h-file-and-imp
+//https://github.com/tnm/murmurhash-java/blob/master/src/main/java/ie/ucd/murmur/MurmurHash.java
