@@ -1,6 +1,4 @@
-#
-#Simple Makefile for Demo
-#
+#Simple Makefile for the demo
 SOURCE := $(wildcard *.cpp)
 OBJS    := $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCE)))
 
